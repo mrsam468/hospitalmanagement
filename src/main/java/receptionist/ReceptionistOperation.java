@@ -29,4 +29,11 @@ public class ReceptionistOperation {
         return availableWards;
     }
 
+    public String patientsWard (){
+        for (PatientDetails registeredPatient : registeredPatients ){
+            return registeredPatient.getFullName() +" is assigned to " + viewAvailableWard().getFirst().getWardId();
+        }
+        return null;
+    }
+
 }
