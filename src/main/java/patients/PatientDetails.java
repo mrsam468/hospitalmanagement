@@ -7,7 +7,7 @@ public class PatientDetails {
     private String illnessName;
     private int walletBalance;
 
-    public PatientDetails(String fullName,int patientId,int age,String illnessName,int walletBalance){
+    public PatientDetails(String fullName, int patientId, int age, String illnessName, int walletBalance) {
         this.fullName = fullName;
         this.age = age;
         this.patientId = patientId;
@@ -34,4 +34,5 @@ public class PatientDetails {
     public int getWalletBalance() {
         return walletBalance;
     }
+
 }
