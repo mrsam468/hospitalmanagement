@@ -51,7 +51,7 @@ public class DoctorsOperation {
     }
 
     public String dischargePatient() {
-        return "you free to you come";
+        return "you are free to go home";
     }
 
 }
