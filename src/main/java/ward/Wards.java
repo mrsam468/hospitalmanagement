@@ -6,7 +6,7 @@ public class Wards {
     private final int wardCapacity;
     private final int numberOfOccupiedSpaces;
 
-    public Wards(int wardId, String wardName, int wardCapacity, int numberOfOccupiedSpaces){
+    public Wards(int wardId, String wardName, int wardCapacity, int numberOfOccupiedSpaces) {
         this.wardId = wardId;
         this.wardName = wardName;
         this.wardCapacity = wardCapacity;
@@ -27,5 +27,15 @@ public class Wards {
 
     public int getNumberOfOccupiedSpaces() {
         return numberOfOccupiedSpaces;
+    }
+
+    @Override
+    public String toString() {
+        return "Ward{" +
+                "wardId=" + wardId +
+                ", wardName='" + wardName + '\'' +
+                ", wardCapacity=" + wardCapacity +
+                ", numberOfOccupiedSpaces=" + numberOfOccupiedSpaces +
+                '}';
     }
 }

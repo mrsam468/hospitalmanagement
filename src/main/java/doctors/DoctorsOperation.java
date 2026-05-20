@@ -24,7 +24,7 @@ public class DoctorsOperation {
         return doctorsName;
     }
 
-    public int getBill(){
+    public int getBill() {
         return bill;
     }
 
@@ -36,18 +36,22 @@ public class DoctorsOperation {
         return patientAssigned;
     }
 
-    public String getDiagnosis(){
+    public String getDiagnosis() {
         return diagnosis;
     }
 
-    public String getDrugPrescription(){
+    public String getDrugPrescription() {
         return drugPrescription;
     }
 
     public String medicalReport() {
-        return "Patient Fullname : " + patientAssigned.getFullName() + " Doctors Name : "
-                + doctorsName + " Diagnosis " + diagnosis + " Treatement Prescribed" +
-                drugPrescription + " Ward assigned " + wardAssigned;
+        return "Patient Fullname : " + patientAssigned.getFullName() + ", Doctors Name : "
+                + doctorsName + ", Diagnosis " + diagnosis + ", Treatement Prescribed: " +
+                drugPrescription + ", Ward assigned: " + wardAssigned;
+    }
+
+    public String dischargePatient() {
+        return "you free to you come";
     }
 
 }

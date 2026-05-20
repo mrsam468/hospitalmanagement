@@ -3,28 +3,31 @@ package patients;
 import doctors.DoctorsOperation;
 import exceptions.InsufficientBalanceException;
 
-public class PatientOperation extends PatientDetails{
-    DoctorsOperation doctorsOperation;
-    public PatientOperation(String fullName, int patientId, int age, String illnessName, int walletBalance, DoctorsOperation doctorsOperation) {
-        super(fullName, patientId, age, illnessName, walletBalance);
+public class PatientOperation {
+    private DoctorsOperation doctorsOperation;
+
+    public PatientOperation(DoctorsOperation doctorsOperation) {
         this.doctorsOperation = doctorsOperation;
     }
 
-    public String viewAssignedDoctor(){
+    public String viewAssignedDoctor() {
         return doctorsOperation.getDoctorsName();
     }
 
-    public String viewDiagnose(){
+    public String viewDiagnose() {
         return doctorsOperation.getDiagnosis();
     }
 
-    public String viewTreatmentPrescribed(){
+    public String viewTreatmentPrescribed() {
         return doctorsOperation.getDrugPrescription();
     }
 
     public void payBill() throws InsufficientBalanceException {
-        if (getWalletBalance()<doctorsOperation.getBill()){
+        if (doctorsOperation.getPatientAssigned().getWalletBalance() < doctorsOperation.getBill()) {
             throw new InsufficientBalanceException("you do not have enough money to pay for your bills");
+        } else {
+            doctorsOperation.getPatientAssigned().setWalletBalance(doctorsOperation.getPatientAssigned().getWalletBalance() - doctorsOperation.getBill());
+            System.out.println(doctorsOperation.getPatientAssigned().getWalletBalance());
         }
     }
 }
