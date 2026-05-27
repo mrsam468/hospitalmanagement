@@ -1,8 +1,6 @@
-package patients;
+package HospitalRecords;
 
-import ward.Wards;
-
-public class PatientDetails {
+public class Patient {
     private String fullName;
     private int patientId;
     private int age;
@@ -10,7 +8,7 @@ public class PatientDetails {
     private int walletBalance;
     private Wards wardAssigned;
 
-    public PatientDetails(String fullName, int patientId, int age, String illnessName, int walletBalance) {
+    public Patient(String fullName, int patientId, int age, String illnessName, int walletBalance) {
         this.fullName = fullName;
         this.age = age;
         this.patientId = patientId;

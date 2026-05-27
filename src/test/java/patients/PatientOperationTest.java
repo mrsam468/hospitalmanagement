@@ -1,22 +1,24 @@
 package patients;
 
-import doctors.DoctorsOperation;
+import HospitalRecords.Patient;
+import operations.PatientOperation;
+import operations.DoctorsOperation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ward.Wards;
+import HospitalRecords.Wards;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PatientOperationTest {
     Wards ward1;
-    PatientDetails patientDetails1;
+    Patient patientDetails1;
     DoctorsOperation doctorsOperation;
     PatientOperation patientOperation;
 
     @BeforeEach
     void setUp() {
         ward1 = new Wards(2, "safety room", 15, 12);
-        patientDetails1 = new PatientDetails("Daniel Abel", 2, 24, "malaria", 5000);
+        patientDetails1 = new Patient("Daniel Abel", 2, 24, "malaria", 5000);
         doctorsOperation = new DoctorsOperation("David", patientDetails1, patientDetails1.getIllnessName(), "paracetamol", ward1, 1500);
         patientOperation = new PatientOperation(doctorsOperation);
     }

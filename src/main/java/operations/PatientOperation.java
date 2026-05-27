@@ -1,6 +1,5 @@
-package patients;
+package operations;
 
-import doctors.DoctorsOperation;
 import exceptions.InsufficientBalanceException;
 
 public class PatientOperation {

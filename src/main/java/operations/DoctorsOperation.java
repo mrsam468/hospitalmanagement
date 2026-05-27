@@ -1,17 +1,17 @@
-package doctors;
+package operations;
 
-import patients.PatientDetails;
-import ward.Wards;
+import HospitalRecords.Patient;
+import HospitalRecords.Wards;
 
 public class DoctorsOperation {
     private final String doctorsName;
-    private PatientDetails patientAssigned;
+    private Patient patientAssigned;
     private final String diagnosis;
     private final String drugPrescription;
     private final Wards wardAssigned;
     private final int bill;
 
-    public DoctorsOperation(String doctorsName, PatientDetails patientDetails, String diagnosis, String drugPrescription, Wards wardsAssigned, int bill) {
+    public DoctorsOperation(String doctorsName, Patient patientDetails, String diagnosis, String drugPrescription, Wards wardsAssigned, int bill) {
         this.doctorsName = doctorsName;
         this.patientAssigned = patientDetails;
         this.diagnosis = diagnosis;
@@ -28,11 +28,11 @@ public class DoctorsOperation {
         return bill;
     }
 
-    private void assignPatient(PatientDetails patientDetails) {
+    private void assignPatient(Patient patientDetails) {
         patientAssigned = patientDetails;
     }
 
-    public PatientDetails getPatientAssigned() {
+    public Patient getPatientAssigned() {
         return patientAssigned;
     }
 
