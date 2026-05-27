@@ -1,4 +1,4 @@
-package HospitalRecords;
+package hospitalrecords;
 
 public abstract class UserCommon {
 }

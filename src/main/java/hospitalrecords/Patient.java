@@ -1,4 +1,4 @@
-package HospitalRecords;
+package hospitalrecords;
 
 public class Patient {
     private String fullName;

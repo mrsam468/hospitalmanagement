@@ -1,8 +1,7 @@
 package operations;
 
-import HospitalRecords.Patient;
-import HospitalRecords.Wards;
-import exceptions.NoMoreSpaceAvailableException;
+import hospitalrecords.Patient;
+import hospitalrecords.Wards;
 
 import java.util.ArrayList;
 import java.util.List;

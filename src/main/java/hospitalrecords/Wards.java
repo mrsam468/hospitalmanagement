@@ -1,4 +1,4 @@
-package HospitalRecords;
+package hospitalrecords;
 
 import java.util.ArrayList;
 import java.util.List;

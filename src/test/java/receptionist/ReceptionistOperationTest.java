@@ -1,7 +1,7 @@
 package receptionist;
 
-import HospitalRecords.Patient;
-import HospitalRecords.Wards;
+import hospitalrecords.Patient;
+import hospitalrecords.Wards;
 import operations.ReceptionistOperation;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,12 +21,12 @@ class ReceptionistOperationTest {
 
         patientDetails1 = new Patient("Daniel Abel", 2, 24, "malaria", 5000);
         patientDetails2 = new Patient("Kelvin Abel", 2, 24, "malaria", 5000);
-        receptionistOperation.registerPatients(patientDetails2,ward1);
+        receptionistOperation.registerPatients(patientDetails2, ward1);
     }
 
     @org.junit.jupiter.api.Test
     void registerPatients() {
-        receptionistOperation.registerPatients(patientDetails1,ward2);
+        receptionistOperation.registerPatients(patientDetails1, ward2);
         assertEquals(2, receptionistOperation.viewPatients().size());
     }
 

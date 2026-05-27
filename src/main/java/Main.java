@@ -1,12 +1,16 @@
+import hospitalrecords.Doctor;
 import operations.DoctorsOperation;
-import HospitalRecords.Patient;
+import hospitalrecords.Patient;
 import operations.PatientOperation;
 import operations.ReceptionistOperation;
-import HospitalRecords.Wards;
+import hospitalrecords.Wards;
 
 public class Main {
     public static void main(String[] args) {
         ReceptionistOperation receptionistOperation = new ReceptionistOperation();
+
+        Doctor doctor1 = new Doctor("james", "kelvin", "", "james23@gmail.com", 24, "ghana");
+        Doctor doctor2 = new Doctor("david", "john", "ryan", "davie3@gmail.com", 29, "nigerian");
 
         Wards ward1 = new Wards(2, "safety room", 15, 12);
         Wards ward2 = new Wards(3, "quite room", 12, 8);
@@ -14,8 +18,8 @@ public class Main {
         Patient patientDetails1 = new Patient("Daniel Abel", 2, 24, "malaria", 5000);
         Patient patientDetails2 = new Patient("Josiah Bethel", 4, 44, "typhoid", 4000);
 
-        DoctorsOperation doctorsOperation1 = new DoctorsOperation("James", patientDetails1, patientDetails1.getIllnessName(), "paracetamol", ward1, 3000);
-        DoctorsOperation doctorsOperation2 = new DoctorsOperation("James", patientDetails2, patientDetails2.getIllnessName(), "paracetamol", ward2, 3000);
+        DoctorsOperation doctorsOperation1 = new DoctorsOperation(doctor1, patientDetails1, patientDetails1.getIllnessName(), "paracetamol", ward1, 3000);
+        DoctorsOperation doctorsOperation2 = new DoctorsOperation(doctor2, patientDetails2, patientDetails2.getIllnessName(), "paracetamol", ward2, 3000);
 
         PatientOperation patient1Operation = new PatientOperation(doctorsOperation1);
         PatientOperation patient2Operation = new PatientOperation(doctorsOperation2);;
@@ -24,18 +28,18 @@ public class Main {
         receptionistOperation.registerPatients(patientDetails2,ward1);
 
 
-//        System.out.println(doctorsOperation1.getDiagnosis());
-//        System.out.println(doctorsOperation2.getDiagnosis());
-//
-//        System.out.println(doctorsOperation2.medicalReport());
-//        System.out.println(doctorsOperation1.medicalReport());
+        System.out.println(doctorsOperation1.getDiagnosis());
+        System.out.println(doctorsOperation2.getDiagnosis());
+
+        System.out.println(doctorsOperation2.medicalReport());
+        System.out.println(doctorsOperation1.medicalReport());
 
         System.out.println(ward1.getPatientsAssignedToWard());
 
         System.out.println(receptionistOperation.viewAvailableWard());
 
-//        patient1Operation.payBill();
-//        patient2Operation.payBill();
+        patient1Operation.payBill();
+        patient2Operation.payBill();
 
         doctorsOperation1.dischargePatient();
         doctorsOperation2.dischargePatient();
