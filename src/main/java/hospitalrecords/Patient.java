@@ -1,15 +1,19 @@
 package hospitalrecords;
 
 public class Patient {
-    private String fullName;
+    private String firstName;
+    private String lastName;
+    private String otherName;
     private int patientId;
     private int age;
     private String illnessName;
     private int walletBalance;
     private Wards wardAssigned;
 
-    public Patient(String fullName, int patientId, int age, String illnessName, int walletBalance) {
-        this.fullName = fullName;
+    public Patient(String firstName,String lastName,String otherName, int patientId, int age, String illnessName, int walletBalance) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.otherName = otherName;
         this.age = age;
         this.patientId = patientId;
         this.illnessName = illnessName;
@@ -17,7 +21,7 @@ public class Patient {
     }
 
     public String getFullName() {
-        return fullName;
+        return firstName + " " + lastName + " " + otherName;
     }
 
     public void setWardAssigned(Wards wardAssigned) {
