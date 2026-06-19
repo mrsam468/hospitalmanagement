@@ -1,6 +1,6 @@
-package hospitalrecords;
+package model;
 
-public class Patient {
+public  class Patient {
     private String firstName;
     private String lastName;
     private String otherName;
@@ -8,7 +8,7 @@ public class Patient {
     private int age;
     private String illnessName;
     private int walletBalance;
-    private Wards wardAssigned;
+    private Ward wardAssigned;
 
     public Patient(String firstName,String lastName,String otherName, int patientId, int age, String illnessName, int walletBalance) {
         this.firstName = firstName;
@@ -24,11 +24,11 @@ public class Patient {
         return firstName + " " + lastName + " " + otherName;
     }
 
-    public void setWardAssigned(Wards wardAssigned) {
+    public void setWardAssigned(Ward wardAssigned) {
         this.wardAssigned = wardAssigned;
     }
 
-    public Wards getWardAssigned() {
+    public Ward getWardAssigned() {
         return wardAssigned;
     }
 
@@ -59,3 +59,5 @@ public class Patient {
                 + ", walletBalance: " + getWalletBalance() + ", WardAssigned :" + getWardAssigned() + "]";
     }
 }
+
+

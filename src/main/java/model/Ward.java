@@ -1,20 +1,28 @@
-package hospitalrecords;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Wards {
+public class Ward {
     private int wardId;
     private String wardName;
     private int wardCapacity;
     private int numberOfOccupiedSpaces;
-    private List<Patient> patientsAssignedToWard = new ArrayList<>();
+    private List<Patient> assignedPatients = new ArrayList<>();
 
-    public Wards(int wardId, String wardName, int wardCapacity, int numberOfOccupiedSpaces) {
+    public Ward(int wardId, String wardName, int wardCapacity, int numberOfOccupiedSpaces) {
         this.wardId = wardId;
         this.wardName = wardName;
         this.wardCapacity = wardCapacity;
         this.numberOfOccupiedSpaces = numberOfOccupiedSpaces;
+    }
+
+    public List<Patient> getAssignedPatients() {
+        return assignedPatients;
+    }
+
+    public void setAssignedPatients(List<Patient> assignedPatients) {
+        this.assignedPatients = assignedPatients;
     }
 
     public int getWardId() {
@@ -31,18 +39,6 @@ public class Wards {
 
     public int getNumberOfOccupiedSpaces() {
         return numberOfOccupiedSpaces;
-    }
-
-    public void setPatientsAssignedToWard(Patient patient) {
-        patientsAssignedToWard.add(patient);
-    }
-
-    public List<String> getPatientsAssignedToWard() {
-        List<String> patients = new ArrayList<>();
-        for (Patient patient : patientsAssignedToWard) {
-            patients.add(patient.getFullName());
-        }
-        return patients;
     }
 
     @Override

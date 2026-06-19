@@ -1,4 +1,4 @@
-package hospitalrecords;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +13,11 @@ public class Doctor {
     private Patient patientAssigned;
     private final String diagnosis;
     private final String drugPrescription;
-    private final Wards wardAssigned;
-    private final int bill;
+    private final Ward wardAssigned;
+    private final Bill bill;
     private List<Patient> assignedPatients = new ArrayList<>();
 
-    public Doctor( String firstName, String lastName, String otherName, String email, int age, String nationality,Patient patientDetails, String diagnosis, String drugPrescription, Wards wardsAssigned, int bill) {
+    public Doctor(String firstName, String lastName, String otherName, String email, int age, String nationality, Patient patientDetails, String diagnosis, String drugPrescription, Ward wardsAssigned, Bill bill) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.otherName = otherName;
@@ -31,8 +31,15 @@ public class Doctor {
         this.bill = bill;
     }
 
+    public List<Patient> getAssignedPatients() {
+        return assignedPatients;
+    }
 
-    public int getBill() {
+    public void setAssignedPatients(List<Patient> assignedPatients) {
+        this.assignedPatients = assignedPatients;
+    }
+
+    public Bill getBill() {
         return bill;
     }
 
@@ -42,6 +49,13 @@ public class Doctor {
 
     public Patient getPatientAssigned() {
         return patientAssigned;
+    }
+    public List<String> patientDiagnosis(){
+        List<String> illness = new ArrayList<>();
+        for (Patient patient: assignedPatients){
+            illness.add(patient.getIllnessName());
+        }
+        return illness;
     }
 
     public void setAssignedPatient(Patient patient) {

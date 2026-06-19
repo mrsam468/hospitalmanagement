@@ -1,4 +1,4 @@
-package hospitalrecords;
+package model;
 
 public class Nurses {
     private String firstName;

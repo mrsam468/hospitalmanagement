@@ -1,5 +1,7 @@
 package hospitalrecords;
 
+import model.MedicalReport;
+import model.Patient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
