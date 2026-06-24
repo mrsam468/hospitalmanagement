@@ -1,19 +1,23 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Hospital {
 
-    private List<Doctor> doctors;
-    private List<Patient> patients;
-    private List<Receptionist> receptionists;
-    private List<Ward> wards;
+    private List<Doctor> doctors = new ArrayList<>();
+    private List<Patient> patients = new ArrayList<>();
+    private List<Receptionist> receptionists = new ArrayList<>();
+    private List<Ward> wards = new ArrayList<>();
 
     public List<Doctor> doctors() {
         return doctors;
     }
 
-    public void addDoctor(Doctor doctor) {
+    public void addDoctor(List<Doctor> doctor) {
+            doctors = doctor;
+        }
+    public void addDoctor(Doctor doctor){
         this.doctors.add(doctor);
     }
 
@@ -34,7 +38,7 @@ public class Hospital {
     }
 
     public List<Ward> wards() {
-        return wards;
+        return this.wards;
     }
 
     public void addWards(Ward ward) {

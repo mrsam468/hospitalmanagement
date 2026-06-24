@@ -35,17 +35,14 @@ public class Doctor {
         return assignedPatients;
     }
 
-    public void setAssignedPatients(List<Patient> assignedPatients) {
-        this.assignedPatients = assignedPatients;
+    public void setAssignedPatients(Patient assignedPatient) {
+        this.assignedPatients.add(assignedPatient);
     }
 
     public Bill getBill() {
         return bill;
     }
 
-    private void assignPatient(Patient patientDetails) {
-        patientAssigned = patientDetails;
-    }
 
     public Patient getPatientAssigned() {
         return patientAssigned;
@@ -58,7 +55,7 @@ public class Doctor {
         return illness;
     }
 
-    public void setAssignedPatient(Patient patient) {
+    public void AssignedPatient(Patient patient) {
         assignedPatients.add(patient);
     }
 

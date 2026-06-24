@@ -21,6 +21,11 @@ public class Main {
 
         Doctor doctor1 = new Doctor("james", "kelvin", "", "james23@gmail.com", 24, "ghana",patient2,"typhoid","panadol",ward1,bill1);
         Doctor doctor2 = new Doctor("david", "john", "ryan", "davie3@gmail.com", 29, "nigerian",patient1,"malaria","paracetamol",ward2,bill2);
+//        List<Doctor> doctors = List.of(
+//                doctor1,doctor2
+//        );
+//        hospital.addDoctor(doctors);
+//
         hospital.addDoctor(doctor1);
         hospital.addDoctor(doctor2);
 
@@ -34,14 +39,8 @@ public class Main {
         receptionist2.assignPatientToWard(ward2,patient2);
 
 
-
-
-
-
-
-
-
-
+        System.out.println(receptionist2.viewPatients());
+        System.out.println(receptionist1.viewPatients());
 
 
     }

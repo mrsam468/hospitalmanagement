@@ -36,13 +36,11 @@ public class Receptionist {
     }
 
     public void assignPatientToDoctor(Doctor doctor, Patient patient){
-        List<Patient> patientList = doctor.getAssignedPatients();
-        patientList.add(patient);
+        doctor.AssignedPatient(patient);
     }
 
     public void assignPatientToWard(Ward ward,Patient patient){
-        List<Patient> patients = ward.getAssignedPatients();
-        patients.add(patient);
+        patient.setWardAssigned(ward);
     }
 
     public void debitPatient(Doctor doctor){
