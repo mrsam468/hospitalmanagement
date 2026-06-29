@@ -7,7 +7,7 @@ public class MedicalReport {
         this.doctor = doctor;
     }
 
-    public String medicalReport() {
+    public String toString() {
         return "Patient Fullname : " + doctor.getPatientAssigned().getFullName() + ", Doctors Name : "
                 + doctor.getFullName() + ", Diagnosis " + doctor.getDiagnosis() + ", Treatement Prescribed: " +
                 doctor.getDrugPrescription() + ", Ward assigned: " + doctor.getPatientAssigned().getWardAssigned();

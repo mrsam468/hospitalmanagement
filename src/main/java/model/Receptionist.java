@@ -55,4 +55,7 @@ public class Receptionist {
         }
     }
 
+    public void dischargePatient(Patient patient1) {
+        System.out.println(patient1.getFullName() + "you have been discharged");
+    }
 }

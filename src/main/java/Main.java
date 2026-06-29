@@ -6,43 +6,31 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Hospital hospital = new Hospital();
-        Receptionist receptionist1 = new Receptionist("David","Gabriel","Daniel");
-        Receptionist receptionist2 = new Receptionist("Ga","Gabriel","Daniel");
-        Receptionist receptionist3 = new Receptionist("Nab","Gabriel","Daniel");
-
-        Patient patient1 = new Patient("Daniel ","Abel","kate", 2, 24, "malaria", 5000);
-        Patient patient2 = new Patient("Josiah"," Bethel" ,"chapel", 2, 44, "typhoid", 4000);
-
-        Ward ward1 = new Ward(2, "safety room", 15, 12);
-        Ward ward2 = new Ward(3, "quite room", 12, 8);
-
-        Bill bill1 = new Bill(2300,patient1.getFullName());
-        Bill bill2 = new Bill(4533,patient2.getFullName());
-
-        Doctor doctor1 = new Doctor("james", "kelvin", "", "james23@gmail.com", 24, "ghana",patient2,"typhoid","panadol",ward1,bill1);
-        Doctor doctor2 = new Doctor("david", "john", "ryan", "davie3@gmail.com", 29, "nigerian",patient1,"malaria","paracetamol",ward2,bill2);
-//        List<Doctor> doctors = List.of(
-//                doctor1,doctor2
-//        );
-//        hospital.addDoctor(doctors);
-//
+        Receptionist receptionist = new Receptionist("James ","David","Gabriel");
+        Patient patient1 = new Patient("john","favour","sunday",3,23,"malaria",2300);
+        Patient patient2 = new Patient("daniel","Abraham","joshia",2,26,"typhoid",3000);
+        Ward ward1 = new Ward(2,"purple",34,17);
+        Ward ward2 = new Ward(1,"Green",34,22);
+        Bill bill1 = new Bill(1500,patient1.getFullName());
+        Bill bill2 = new Bill(2000,patient2.getFullName());
+        Doctor doctor1 = new Doctor("josphine","success","joshua","ibenjaminsamuel57@gmail.com",34,"nigeria",patient1,"malarai","panadol",ward2,bill1);
+        Doctor doctor2 = new Doctor("alex","elijah","bright","james20@gmail.com",31,"Ghana",patient2,"malarai","panadol",ward1,bill2);
         hospital.addDoctor(doctor1);
         hospital.addDoctor(doctor2);
 
-        receptionist2.registerPatient(patient1);
-        receptionist2.registerPatient(patient2);
+        receptionist.registerPatient(patient1);
+        receptionist.registerPatient(patient2);
 
-        receptionist2.assignPatientToDoctor(doctor1,patient1);
-        receptionist2.assignPatientToDoctor(doctor2,patient2);
-
-        receptionist2.assignPatientToWard(ward1,patient1);
-        receptionist2.assignPatientToWard(ward2,patient2);
-
-
-        System.out.println(receptionist2.viewPatients());
-        System.out.println(receptionist1.viewPatients());
-
-
+//        System.out.println(receptionist.viewPatients());
+        receptionist.assignPatientToWard(ward2,patient1);
+        receptionist.assignPatientToWard(ward1,patient2);
+        MedicalReport patient1MedicalReport = new MedicalReport(doctor1);
+        MedicalReport patient2MedicalReport = new MedicalReport(doctor2);
+//        System.out.println(patient2MedicalReport);
+        System.out.println(patient1MedicalReport);
+        receptionist.debitPatient(doctor1);
+        receptionist.debitPatient(doctor2);
+        receptionist.dischargePatient(patient1);
     }
 }
 
